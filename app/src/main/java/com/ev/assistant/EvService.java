@@ -56,7 +56,7 @@ import java.util.regex.Pattern;
 public class EvService extends Service {
     private static final String CH = "ev_channel";
     private static final Pattern WAKE =
-            Pattern.compile("\\b(hey|hay|hei|hej)\\s*[,.]?\\s*(ev|eve|if|ef|ife)\\b");
+            Pattern.compile("\\b(hey|hay|hei|hej)\\s*[,.]?\\s*(ev|eve|if|ef|ife|hey|hay|he|ey|ep|av|iv|ive)\\b");
 
     private Handler main;
     private SpeechRecognizer rec;
