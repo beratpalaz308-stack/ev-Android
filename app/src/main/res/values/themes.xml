@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="EvTheme" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/ev_bg</item>
+        <item name="android:statusBarColor">@color/ev_bg</item>
+        <item name="android:navigationBarColor">@color/ev_bg</item>
+        <item name="android:colorBackground">@color/ev_bg</item>
+        <item name="android:colorAccent">@color/ev_accent</item>
+        <item name="android:textColorPrimary">@color/ev_text</item>
+    </style>
+</resources>
