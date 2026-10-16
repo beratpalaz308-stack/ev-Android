@@ -82,7 +82,7 @@ public class EvService extends Service {
             stopRecognizer();
             commandMode = true;
             updateNotif("Duydum: hey ev");
-            speak("Efendim");
+            speak("Tabi efendim");
         }
     };
 
@@ -324,7 +324,7 @@ public class EvService extends Service {
                 process(rest);
             } else {
                 commandMode = true;
-                speak("Efendim");
+                speak("Tabi efendim");
             }
         } else {
             restart(200);
@@ -524,8 +524,8 @@ public class EvService extends Service {
     private JSONObject askGemini(String cmd) throws Exception {
         SharedPreferences sp = getSharedPreferences("ev", MODE_PRIVATE);
         String key = sp.getString("key", "").trim();
-        String model = sp.getString("model", "gemini-3.5-flash-lite").trim();
-        if (model.isEmpty()) model = "gemini-3.5-flash-lite";
+        String model = sp.getString("model", "gemini-2.5-flash").trim();
+        if (model.isEmpty()) model = "gemini-2.5-flash";
         if (key.isEmpty()) throw new Exception("API anahtarı girilmemiş");
 
         JSONArray contents = new JSONArray();
@@ -538,7 +538,7 @@ public class EvService extends Service {
         body.put("contents", contents);
         body.put("generationConfig", new JSONObject()
                 .put("responseMimeType", "application/json")
-                .put("temperature", 0.6));
+                .put("temperature", 0.3));
 
         URL url = new URL("https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent");
         HttpURLConnection c = (HttpURLConnection) url.openConnection();
